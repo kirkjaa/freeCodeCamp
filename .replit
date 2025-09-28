@@ -38,14 +38,10 @@ localPort = 32941
 externalPort = 3000
 
 [[ports]]
-localPort = 40515
-externalPort = 3003
-
-[[ports]]
 localPort = 40907
 externalPort = 3001
 
 [deployment]
 deploymentTarget = "autoscale"
 build = ["cd", "client", "&&", "pnpm", "run", "build"]
-run = ["cd", "client", "&&", "pnpm", "run", "serve", "-p", "8080"]
+run = ["sh", "-c", "cd client && npx serve -l ${PORT:-8000} -c serve.json public"]
