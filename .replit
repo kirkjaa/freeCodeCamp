@@ -80,5 +80,3 @@ externalPort = 6000
 
 [deployment]
 deploymentTarget = "autoscale"
-build = ["cd", "client", "&&", "pnpm", "run", "build"]
-run = ["sh", "-c", "cd client && PORT=${PORT:-8000} pnpm run serve"]
